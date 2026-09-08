@@ -11,7 +11,7 @@ def capabilities():
         "phase": 0,
         "execution_enabled": False,
         "features": ["nested-lab", "preflight", "json-spec", "dry-run", "event-timeline"],
-        "adapters": {"vcf_installer": "scaffold", "vcenter": "planned", "esxi": "planned"},
+        "adapters": {"vcf_installer": "scaffold", "vcenter": "read-only", "esxi": "planned"},
     }
 
 @router.post("/validate", response_model=ValidationReport)

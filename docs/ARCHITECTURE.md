@@ -1,3 +1,5 @@
+> Updated milestone: the protected vCenter test/discovery API is now implemented. See [vCenter discovery](VCENTER_DISCOVERY.md) for the current security boundary and setup. Earlier descriptions below document the preceding static-validation increment.
+
 # Architecture
 
 Current: Next.js App Router / React 19 / CSS and GSAP -> FastAPI -> Pydantic static validation and in-memory dry-run jobs. Existing frontend/backend boundaries are preserved.

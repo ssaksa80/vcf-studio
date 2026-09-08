@@ -52,3 +52,7 @@ python -m pytest -q
 ```
 
 The frontend dependency resolution is recorded in pnpm-lock.yaml. Use pnpm install --frozen-lockfile to reproduce it, then pnpm exec tsc --noEmit and pnpm build. An explicit frontend lint configuration is still pending.
+
+### vCenter read-only milestone
+
+Secure connection testing and inventory discovery are now available through backend APIs. See [setup and API details](docs/VCENTER_DISCOVERY.md). Passwords are request-scoped, TLS defaults to verified, and the endpoints require a configured API token and target allowlist. Live vCenter validation and UI integration remain pending.

@@ -1,3 +1,5 @@
+> Updated milestone: the protected vCenter test/discovery API is now implemented. See [vCenter discovery](VCENTER_DISCOVERY.md) for the current security boundary and setup. Earlier descriptions below document the preceding static-validation increment.
+
 # Current API
 
 Base: http://127.0.0.1:8000. Interactive schema: /docs.

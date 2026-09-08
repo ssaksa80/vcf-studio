@@ -1,3 +1,5 @@
+> Updated milestone: the protected vCenter test/discovery API is now implemented. See [vCenter discovery](VCENTER_DISCOVERY.md) for the current security boundary and setup. Earlier descriptions below document the preceding static-validation increment.
+
 # Security status
 
 This is a local development scaffold, not a publicly deployable control plane. Bind the backend to 127.0.0.1. Authentication, authorization, rate limiting, secret-provider integration and structured redacted logging remain prerequisites before adding credentials or APPLY.
