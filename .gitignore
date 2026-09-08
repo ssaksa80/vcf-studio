@@ -1,0 +1,46 @@
+# Local secrets
+.env
+.env.*
+!.env.example
+!.env.sample
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+secrets/
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Node / Next.js
+node_modules/
+.next/
+out/
+dist/
+build/
+*.tsbuildinfo
+coverage/
+
+# Logs and local state
+*.log
+*.sqlite*
+*.db
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# VMware installation media and VM disks
+*.iso
+*.ova
+*.ovf
+*.vmdk
