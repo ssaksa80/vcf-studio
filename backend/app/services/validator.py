@@ -11,6 +11,17 @@ def validate_spec(spec: DeploymentSpec) -> ValidationReport:
     names = [h.fqdn.lower() for h in spec.hosts]
     add("HOST_UNIQUE", "Unique ESXi identities", len(names) == len(set(names)),
         "Host FQDNs are unique." if len(names)==len(set(names)) else "Duplicate host FQDN detected.", "Assign a unique FQDN to every ESXi host.")
+    addresses = [str(host.management_ip) for host in spec.hosts]
+    add("HOST_IP_UNIQUE", "Unique management IP addresses", len(addresses) == len(set(addresses)),
+        "Management IP addresses are unique." if len(addresses) == len(set(addresses)) else "Duplicate management IP address detected.",
+        "Assign a unique management IP address to every ESXi host.")
+    components = [spec.vcenter_fqdn, spec.sddc_manager_fqdn, spec.nsx_manager_fqdn]
+    if spec.operations_fqdn is not None:
+        components.append(spec.operations_fqdn)
+    identities = names + components
+    add("IDENTITY_UNIQUE", "Unique host and appliance identities", len(identities) == len(set(identities)),
+        "Host and appliance names are unique." if len(identities) == len(set(identities)) else "Host or appliance DNS identity collision detected.",
+        "Assign distinct FQDNs to all hosts and appliances, including Operations.")
     vlans = [spec.network.management_vlan, spec.network.vmotion_vlan, spec.network.vsan_vlan, spec.network.nsx_host_overlay_vlan]
     add("VLAN_SEPARATION", "Traffic VLAN separation", len(vlans) == len(set(vlans)),
         "Management, vMotion, vSAN and NSX overlay VLAN IDs are distinct." if len(vlans)==len(set(vlans)) else "One or more traffic classes share a VLAN ID.",

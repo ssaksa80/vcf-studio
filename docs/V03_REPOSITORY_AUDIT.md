@@ -34,3 +34,7 @@ vCenter discovery, capacity inventory, CIDR/pools, active DNS/NTP probes, media,
 
 ## First bounded increment
 Harden existing blueprint identities and duplicate management IP checks, reject blank NTP entries, add API regression tests, and document limitations. No VMware mutations, new deployment claims, or rewrite.
+
+## First increment verification
+
+24 backend regression tests pass. One dependency deprecation warning originates in Starlette TestClient using an AnyIO alias; it does not fail tests. Real local HTTP smoke checks returned 200 from Uvicorn /health and the production Next.js home page. Temporary verification servers were stopped. Frontend types and build passed earlier; no frontend source changed. Frontend lint and dependency security audit remain pending.
